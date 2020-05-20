@@ -7,18 +7,6 @@ stringList = ['Alabama', 'Georgia!', 'georgia', 'FlOrida', 'south carolina##', '
 def stripDemo(entry):
     return entry.strip()
 
-def regExpSubPunctuation(entry):
-    result = re.sub('[!]','',entry)
-    return result
-
-def regExpSubNumbers(entry):
-    result = re.sub('[#]','',entry)
-    return result
-
-def regExpSubQ(entry):
-    result = re.sub('[?]','',entry)
-    return result
-
 def regExpSubAll(entry):
     result = re.sub('[!#?]','',entry)
     return result
