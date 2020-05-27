@@ -1,0 +1,8 @@
+This is an example text file.
+
+It is here for testing files I/O ops such as:
+
+Open
+Close
+Read
+Write
