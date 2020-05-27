@@ -1,7 +1,8 @@
 
 path = 'example.txt'
 
-def readTen(filePath):
+# Default text mode
+def readTenChars(filePath):
     f = open(filePath)
 
     print("f.read(10): {}".format(f.read(10)))
@@ -10,7 +11,8 @@ def readTen(filePath):
     print()
     f.close()
 
-def readTenBinary(filePath):
+# Binary mode
+def readTenBytes(filePath):
     f = open(filePath, 'rb')
 
     print("f.read(10): {}".format(f.read(10)))
@@ -30,6 +32,6 @@ def seekAndRead(filePath):
         print("f.read(10): {}".format(f.read(10)))
 
 if __name__ == '__main__':
-    readTen(path)
-    readTenBinary(path)
+    readTenChars(path)
+    readTenBytes(path)
     seekAndRead(path)
