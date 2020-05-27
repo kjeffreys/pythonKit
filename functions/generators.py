@@ -25,5 +25,6 @@ if __name__ == '__main__':
     for x in squares:
         print(x, end = ' ')
     print()
+    print()
 
     print(generatorExpression1())
