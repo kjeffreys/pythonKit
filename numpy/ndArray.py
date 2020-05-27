@@ -21,6 +21,15 @@ def scalarMultiplyMatrix(array, scalar):
 def matrixAddToSelf(array):
     print("\nData + Data:\n{}".format(array + array))
 
+def matrixSize(matrix):
+    return matrix.shape
+
+'''
+Returns data type of the scalar components of the matrix (must be uniformly integers, floats, etc.)
+'''
+def matrixType(matrix):
+    return matrix.dtype
+
 
 if __name__ == '__main__':
     print("----rand2Darray()----")
@@ -29,3 +38,9 @@ if __name__ == '__main__':
     scalarMultiplyMatrix(rand2Darray(3,3), 10)
     print("----matrixAddToSelf()----")
     matrixAddToSelf(rand2Darray(2,5))
+    print("----matrixSize()----")
+    print(matrixSize(rand2Darray(1,7)))
+    print("----matrixType()----")
+    print(matrixType(rand2Darray(1,7)))
+    print("----matrixType()----")
+    print(matrixType(rand2Darray(1,7)))
