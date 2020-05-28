@@ -15,6 +15,11 @@ def convertNestedLists(exList=[ [1,2,3], [4,5,6], [20,30,100] ]):
     ndarray2 = np.array(exList)
     
     print(ndarray2)
+    print(ndarray2.dtype) # uses int32 currently to save memory
+
+def getDimensions(ndarray):
+    print(ndarray.ndim)
+    print()
 
 if __name__ == '__main__':
     print("Converting list to numpy array object (ndarray)...")
