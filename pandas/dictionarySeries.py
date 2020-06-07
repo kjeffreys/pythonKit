@@ -19,6 +19,12 @@ def reorderKeysOnCreate(dictionary=dictionary):
 
     return series
 
+def addNameProperties(dictionary=dictionary):
+    print("---addNameProperties()---")
+    series = pd.Series(dictionary, index=sorted(dictionary))
+
+    return series
+
 def nullValueFill(dictionary=dictionary):
     print("---nullValueFill()---")
     series = pd.Series(dictionary, index=['California', 'Florida', 'Georgia', 'Illinois', 'New York', 'Pennsylvania', 'Texas'])
