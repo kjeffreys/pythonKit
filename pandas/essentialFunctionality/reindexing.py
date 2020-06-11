@@ -22,7 +22,28 @@ def updateFillIndex(series=sd.reindexing2):
     print("---updateFillIndex()---")
     return series.reindex(range(6), method='ffill')
 
+'''
+With DataFrame, reindex() can alter either the row index, column index,
+or both. When passed only a sequence, it reindexes the rows in the result
+'''
+def reindexRow(frame=sd.frame1):
+    print("---reindexRow()---")
+    print("Original Frame:\n{}".format(frame))
+    frame2 = frame.reindex(['a', 'b', 'c', 'd'])
+    print("---reindex(['a','b','c','d'])---")
+    return frame2
+
+def reindexColumn(frame=sd.frame1):
+    print("---reindexColumn()---")
+    print("Original Frame:\n{}".format(frame))
+    states = ['Texas', 'Utah', 'California']
+    print("---reindex(columns=states)---")
+    return frame.reindex(columns=states)
+
+
 if __name__ == "__main__":
     print(getSeries())
     print(updateIndex())
     print(updateFillIndex())
+    print(reindexRow())
+    print(reindexColumn())
