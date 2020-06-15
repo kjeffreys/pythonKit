@@ -57,3 +57,4 @@ Iterating           Support for iterating over chunks of very large files.
 Unclean data        Skipping rows or a footer, comments, or other minor things like numeric
 issues              data with thousands separated by commas
 ============================================================================================
+'''
