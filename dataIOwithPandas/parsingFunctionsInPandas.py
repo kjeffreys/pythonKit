@@ -34,3 +34,26 @@ read_stata          Read a dataset from the Stata file format
 read_feather        Read the Feather binary file format
 ============================================================================================
 '''
+
+
+'''
+# In addition to using methods to indicate the file type being read, various optional arguments fall into the following categories:
+============================================================================================
+Category------------Description-------------------------------------------------------------
+============================================================================================
+Indexing            Can treat one or more columns as the returned DataFrame, and determines
+                    whether to get column names from the file, the user, or not at all.
+============================================================================================
+Type Inference      This includes the user-defined value conversions and custom list of
+and Data            missing value markers.
+Conversion
+============================================================================================
+Datetime parsing    Includes combining capability, including combining date and time
+                    information spread over multiple columns into a single column in the
+                    result.
+============================================================================================
+Iterating           Support for iterating over chunks of very large files.
+============================================================================================
+Unclean data        Skipping rows or a footer, comments, or other minor things like numeric
+issues              data with thousands separated by commas
+============================================================================================
