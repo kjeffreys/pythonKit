@@ -5,17 +5,17 @@ f2 = 'csvFiles/skipRows.csv'
 f3 = 'csvFiles/missingValues.csv'
 
 '''
-The table in file f1 does not have a fixed delimeter, using whitespace to separate fields.
+The table in file f1 does not have a fixed delimiter, using whitespace to separate fields.
 
 Since the fields are separated by a variable amount of whitespace, the following function
-passes a regular expression (\s+) as a delimeter for read_csv.
+passes a regular expression (\s+) as a delimiter for read_csv.
 
 Because there is one fewer column name than the number of data rows, read_csv infers that
 the first column should be the DataFrame's index in this special case.
 '''
-def regExpDelimeter(f=f1, delimeter='\s+'):
+def regExpDelimeter(f=f1, delimiter='\s+'):
     print("---regExpDelimeter()---")
-    df = pd.read_csv(f, sep=delimeter)
+    df = pd.read_csv(f, sep=delimiter)
     return df
 
 def skipRowsRead(f=f2, rows=[0,2,3]): # removes rows with comments
@@ -73,7 +73,7 @@ Argument------------Description-------------------------------------------------
 path                String indicating filesystem location, URL, or file-like obj
 ============================================================================================
 sep OR              Character sequence or regular expression to use to split fields in each
-delimeter           row.
+delimiter           row.
 ============================================================================================
 header              Row number to use as column names; defaults to 0 (first row), but should
                     be None if there is no header row

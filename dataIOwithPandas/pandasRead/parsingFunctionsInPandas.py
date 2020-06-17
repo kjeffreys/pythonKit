@@ -5,9 +5,9 @@ They convert text data into a DataFrame.
 Function------------Description-------------------------------------------------------------
 ============================================================================================
 read_csv            Load delimited data from a file, URL, or file-like obj; use comma as 
-                    default delimeter
+                    default delimiter
 ============================================================================================
-read_fwf            Read data in fixed-width column format (i.e. no delimeters)
+read_fwf            Read data in fixed-width column format (i.e. no delimiters)
 ============================================================================================
 read_clipboard      Version of read_csv that reads data from the clipboard; useful for 
                     converting tables from web pages.
