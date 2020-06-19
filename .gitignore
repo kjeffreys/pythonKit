@@ -132,4 +132,4 @@ dmypy.json
 pythonKitVenv/*
 
 # Alpace API Keys
-config/*
+config.py
