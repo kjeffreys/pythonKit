@@ -1,6 +1,6 @@
 '''
 SQLAlchemy project is a popular Python SQL toolkit that abstracts away common differences
-between SQL databases. panda.read_sql() is a function that enables reading data
+between SQL databases. pandas.read_sql() is a function that enables reading data
 from a general SQLAlchemy connection.
 '''
 import pandas as pd

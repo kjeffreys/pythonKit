@@ -72,8 +72,8 @@ def constructDataFrame():
     return df
 
 if __name__ == "__main__":
-    basicConnect(db='myAlchemyDB.sqlite') # only do when creating new table
-    insertRecords(db='myAlchemyDB.sqlite') # only do when INSERT new rows
+    #basicConnect(db='myAlchemyDB.sqlite') # only do when creating new table
+    #insertRecords(db='myAlchemyDB.sqlite') # only do when INSERT new rows
     print(selectAllRecords(db='myAlchemyDB.sqlite')) # expected: [('Atlanta', 'Georgia', 1.25, 6), ('Tallahassee', 'Florida', 2.6, 3), ('Sacramento', 'California', 1.7, 5)] # success!
     print(showCursorDesc(db='myAlchemyDB.sqlite'))
     print(constructDataFrame())
