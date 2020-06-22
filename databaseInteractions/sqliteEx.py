@@ -63,15 +63,6 @@ def showCursorDesc(db=sqliteDB):
 
     return cursor.description
 
-def showCursorDesc(db=sqliteDB):
-    print("---showCursorDesc()---")
-    con = sqlite3.connect(db)
-
-    # most Python SQL drivers return a list of tuples when selecting data from a table
-    cursor = con.execute('select * from test')
-
-    return cursor.description
-
 def constructDataFrame():
     print("---constructDataFrame()---")
     rows = selectAllRecords()
@@ -80,11 +71,9 @@ def constructDataFrame():
 
     return df
 
-
-
 if __name__ == "__main__":
-    #basicConnect() # only do when creating new table
-    #insertRecords() # only do when INSERT new rows
-    print(selectAllRecords()) # expected: [('Atlanta', 'Georgia', 1.25, 6), ('Tallahassee', 'Florida', 2.6, 3), ('Sacramento', 'California', 1.7, 5)] # success!
-    print(showCursorDesc())
+    basicConnect(db='myAlchemyDB.sqlite') # only do when creating new table
+    insertRecords(db='myAlchemyDB.sqlite') # only do when INSERT new rows
+    print(selectAllRecords(db='myAlchemyDB.sqlite')) # expected: [('Atlanta', 'Georgia', 1.25, 6), ('Tallahassee', 'Florida', 2.6, 3), ('Sacramento', 'California', 1.7, 5)] # success!
+    print(showCursorDesc(db='myAlchemyDB.sqlite'))
     print(constructDataFrame())
