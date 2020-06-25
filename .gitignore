@@ -133,3 +133,6 @@ pythonKitVenv/*
 
 # Alpace API Keys
 config.py
+
+#vscode
+.vscode/*
