@@ -7,6 +7,7 @@ import seaborn as sns
 path = 'D:/datasets/bitly_usagov/example.txt'
 records = [json.loads(line) for line in open(path)]
 df = pd.DataFrame(records)
+numberOfTimeZones = 3440
 
 def cleanData1():
     print("---cleanData1()---")
@@ -69,6 +70,45 @@ def topTimeZones(numResults=10):
 
     return indexer[:numResults]
 
+'''
+Using "take" to select the rows in that order, then slicing off the last
+10 rows(largest values)
+'''
+def pandasLargest1():
+    print("---pandasLargest1()---")
+    aggCounts = isWindows()
+    indexer = topTimeZones(numberOfTimeZones)
+    countSubset = aggCounts.take(indexer[-10:])
+    return countSubset
+
+'''
+pandas has a convenience method called nlargest that performs the same
+opearation as pandasLargest1()
+'''
+def pandasLargest2():
+    print("---pandasLargest2()---")
+    aggCounts = isWindows()
+    return aggCounts.sum(1).nlargest(10)
+
+def norm_total(group):
+    group['normed_total'] = group.total / group.total.sum()
+    return group
+
+def stackedBarPlot():
+    countSubset = pandasLargest1().stack()
+    countSubset.name = 'total'
+    countSubset = countSubset.reset_index()
+    print("countSubset[:10]...\n{}".format(countSubset[:10]))
+    sns.barplot(x='total', y='tz', hue='os', data=countSubset)
+    plt.show()
+
+    # Previous plot is not easy to see relative % of Windows users in
+    # smaller groups, so the following normalizes the group %s to sum to 1
+    results = countSubset.groupby('tz').apply(norm_total)
+    sns.barplot(x='normed_total', y='tz', hue='os', data=results)
+    plt.show()
+
+
 if __name__ == "__main__":
 
     #print(df.info())
@@ -78,3 +118,6 @@ if __name__ == "__main__":
     agentFieldStats()
     #print(isWindows())
     print(topTimeZones())
+    print(pandasLargest1())
+    print(pandasLargest2())
+    stackedBarPlot()
