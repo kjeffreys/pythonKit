@@ -58,7 +58,16 @@ def isWindows():
     #print(aggWithoutUnstack)
 
     aggCounts = byTzOs.size().unstack().fillna(0)
+    aggCounts[aggCounts == ''] = 'Unknown'
     return aggCounts
+
+'''
+Extends isWindows() to also select top time zones among aggCounts
+'''
+def topTimeZones(numResults=10):
+    indexer = isWindows().sum(1).argsort()
+
+    return indexer[:numResults]
 
 if __name__ == "__main__":
 
@@ -67,4 +76,5 @@ if __name__ == "__main__":
     #print(cleanData1())
     #print(visualizeSubset())
     agentFieldStats()
-    print(isWindows())
+    #print(isWindows())
+    print(topTimeZones())
