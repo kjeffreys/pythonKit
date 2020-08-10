@@ -136,3 +136,12 @@ config.py
 
 #vscode
 .vscode/*
+
+# local venv, can use pip freeze > req.txt if needed
+pKitEnv/*
+
+# graph impls not related to this project
+graphs/*
+
+# local only repo
+oop/*
