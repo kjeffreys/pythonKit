@@ -3,13 +3,15 @@ import numpy as np
 import pandas as pd
 import re
 
+stockHtmlPath = 'D:/dataFile/NASDAQ100.html'
+
 '''
 The html file downloaded from Wikipedia has 7 tables:
 ['Record values', 'Annual Returns', 'Components', 'Companies of the NASDAQ-100 index',
  'Nasdaq, Inc.', 'Major United States stock market indices', 'Major American stock market indices']
 '''
 def readHtml():
-    tables = pd.read_html('NASDAQ-100 - Wikipedia.html')
+    tables = pd.read_html(stockHtmlPath)
 
     print(len(tables))
     
